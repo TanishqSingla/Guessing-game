@@ -1,5 +1,6 @@
 let input = document.querySelector("input");
-let button = document.querySelector("button");
+let submit = document.getElementById("submit");
+let reset = document.getElementById("reset");
 
 let rand = Math.floor(Math.random() * 101); //generating number between 0 - 101
 
@@ -16,4 +17,11 @@ function check() {
   }
 }
 
-button.addEventListener("click", check);
+function Reset() {
+  input.value = "";
+  rand = Math.floor(Math.random() * 101); //generating a new number;
+  console.log(rand);
+}
+
+submit.addEventListener("click", check);
+reset.addEventListener("click", Reset);
