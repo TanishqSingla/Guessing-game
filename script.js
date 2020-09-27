@@ -14,6 +14,8 @@ function check() {
   }
   if (+inputVal === rand) {
     p.innerHTML = "Hurray! You guessed it right";
+  } else if (rand - inputVal < 10 && rand - inputVal > -10) {
+    p.innerHTML = "You are too close";
   } else if (+inputVal < rand) {
     p.innerHTML = "Your guess is lower than the number";
   } else if (+inputVal > rand) {
