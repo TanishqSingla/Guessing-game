@@ -5,16 +5,21 @@ let p = document.querySelector("p");
 
 let rand = Math.floor(Math.random() * 101); //generating number between 0 - 101
 
-console.log(rand);
-
 function check() {
-  let inputVal = +input.value; //getting value as a number
-  if (inputVal < rand) {
+  let inputVal = input.value; //getting value as a number
+  if (inputVal === "") {
+    //checking if the input field is not filled
+    p.innerHTML = "Please input a number";
+    return;
+  }
+  if (+inputVal === rand) {
+    p.innerHTML = "Hurray! You guessed it right";
+  } else if (+inputVal < rand) {
     p.innerHTML = "Your guess is lower than the number";
-  } else if (inputVal > rand) {
-    p.innerHTML = "Your value is higher than the number";
-  } else if (inputVal === rand) {
-    p.innerHTML = "Hurray! You guessed the correct number";
+  } else if (+inputVal > rand) {
+    p.innerHTML = "Your guess is higher than the number";
+  } else {
+    p.innerHTML = "Please input a valid number";
   }
 }
 
